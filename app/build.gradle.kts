@@ -41,7 +41,7 @@ android {
         create("release") {
             storeFile = file("keystore.jks")
             storePassword = System.getenv("KEYSTORE_PASSWORD")
-            keyAlias = "keymapper"
+            keyAlias = System.getenv("KEY_ALIAS") ?: "keymapper"
             keyPassword = System.getenv("KEY_PASSWORD")
         }
     }
